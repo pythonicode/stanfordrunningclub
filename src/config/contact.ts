@@ -9,12 +9,12 @@ export const contacts: ContactGroup[] = [
       {
         name: "Spencer Seay",
         email: "spenseay@stanford.edu",
-        image: "/images/contact/spencer.jpg",
+        image: "/src/images/contact/spencer.jpg",
       },
       {
         name: "Oriana Riley",
         email: "oriley@stanford.edu",
-        image: "/images/contact/oriana.jpg",
+        image: "/src/images/contact/oriana.jpg",
       },
     ],
   },
@@ -24,7 +24,7 @@ export const contacts: ContactGroup[] = [
       {
         name: "Anthony Riley",
         email: "anthonyjriley@gmail.com",
-        image: "/images/contact/anthony.jpg",
+        image: "/src/images/contact/anthony.jpg",
       },
     ],
   },

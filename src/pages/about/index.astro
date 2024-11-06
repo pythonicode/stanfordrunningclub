@@ -3,7 +3,7 @@ import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
 import { description, header, images, traditions } from "../../config/about";
 
-const imagePaths = import.meta.glob<{ default: ImageMetadata }>('/src/images/about/*.{webp,png,jpg,jpeg}');
+const imagePaths = import.meta.glob<{ default: ImageMetadata }>('/src/images/**/*.{jpeg,jpg,png,gif,webp}');
 ---
 
 <DefaultLayout title="Stanford Running Club | About">
