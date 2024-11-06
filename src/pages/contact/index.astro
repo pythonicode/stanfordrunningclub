@@ -1,0 +1,27 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { contacts, mailingListURL } from "../../config/contact";
+import { Image } from "astro:assets";
+import ContactCard from "../../components/cards/ContactCard.astro";
+---
+
+<DefaultLayout title="Stanford Running Club | Contact">
+  <section class="max-w-5xl mx-auto grid grid-cols-1 gap-8">
+    <h2 class="text-5xl lg:text-7xl font-black drop-shadow-xl text-center mt-20">GET IN TOUCH</h2>
+    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+      <a href={mailingListURL} class="px-8 py-4 bg-rose-500 text-white text-xl font-semibold rounded hover:bg-rose-600 transition-colors">
+        Join the Mailing List
+      </a>
+    </div>
+    <div class="text-neutral-500 flex items-center justify-center gap-8 text-center">
+      <hr class="w-1/3 my-4" />
+      or reach out directly
+      <hr class="w-1/3 my-4" />
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+      {contacts.map((contact) =>
+        contact.people.map((person) => <ContactCard {...person} role={contact.role} />)
+      )}
+    </div>
+  </section>
+</DefaultLayout>

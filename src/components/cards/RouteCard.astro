@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  distance: number | null;
+  climb: number | null;
+  stravaId: string | null;
+  rickroll?: boolean;
+}
+
+const { title, distance, climb, stravaId, rickroll } = Astro.props;
+
+const stravaUrl = stravaId ? `https://www.strava.com/routes/${stravaId}` : rickroll ? "https://www.youtube.com/watch?v=dQw4w9WgXcQ" : "#";
+---
+
+<div class="flex flex-col items-center justify-center border rounded relative">
+  <div class=" absolute inset-0 p-4 flex flex-col items-center justify-center z-0">
+    <h3 class="text-2xl font-black mt-4">{title}</h3>
+    <div class="flex flex-col items-center justify-center my-4 gap-2">
+      {distance ? (
+        <div class="font-semibold text-2xl uppercase">{(distance / 1.60934).toFixed(1)}mi / {distance.toFixed(1)}km</div>
+      ) : (
+        <div class="font-semibold text-2xl uppercase">Unknown</div>
+      )}
+
+      {climb ? (
+        <div class="py-2 px-4 rounded uppercase text-xs">
+          <strong class="mr-2">Elevation</strong>
+          {Math.round(climb * 3.28084)}ft / {climb}m
+        </div>
+      ) : (
+        <div class="py-2 px-4 rounded uppercase text-xs">Unknown</div>
+      )}
+    </div>
+    <a 
+      href={stravaUrl}
+      target="_blank"
+      rel="noopener noreferrer" 
+      class="px-4 py-2 bg-primary-100 text-primary-900 rounded font-semibold w-full text-center"
+    >
+      View Route on Strava
+    </a>
+  </div>
+  <div class="z-10">
+    <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id={stravaId} data-style="standard" data-surface-type="true" data-map-hash="14.91/37.42245/-122.17594" data-from-embed="true"/>
+  </div>
+</div>

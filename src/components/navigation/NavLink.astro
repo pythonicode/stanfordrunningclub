@@ -1,0 +1,5 @@
+---
+const { href, text, class: className } = Astro.props;
+---
+
+<a href={href} class={`px-2 py-1 hover:bg-zinc-100 rounded text-sm transition-colors border-b-2 hover:border-zinc-400 ${className}`}>{text}</a>

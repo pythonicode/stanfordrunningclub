@@ -1,0 +1,26 @@
+---
+import RouteCard from "../../components/cards/RouteCard.astro";
+import { campusRoutes, offCampusRoutes } from "../../config/runs";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+
+---
+<DefaultLayout title="Stanford Running Club | Our Runs">
+    <section class="max-w-screen-xl mx-auto p-4 my-16">
+        <h1 class="text-5xl font-black text-center">From Campus</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
+            {campusRoutes.map((route) => (
+                <RouteCard {...route} />
+            ))}
+        </div>
+    </section>
+    <section class="max-w-screen-lg mx-auto p-4 my-16"> 
+        <h1 class="text-5xl font-black text-center">Off Campus</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
+            {offCampusRoutes.map((route) => (
+                <RouteCard {...route} />
+            ))}
+        </div>
+    </section>
+</DefaultLayout>
+
+<script src="https://strava-embeds.com/embed.js" is:inline/>

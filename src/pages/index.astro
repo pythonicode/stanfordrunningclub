@@ -1,0 +1,82 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import { calendarURL, heroImage, heroText, joinUsImage, schedule } from "../config/home";
+import ScheduleCard from "../components/cards/ScheduleCard.astro";
+
+const hero = () => import(heroImage) as Promise<{ default: ImageMetadata }>;
+const joinus = () => import(joinUsImage) as Promise<{ default: ImageMetadata }>;
+
+const scheduleImages = import.meta.glob<{ default: ImageMetadata }>('/src/images/schedule/*.{webp,png,jpg,jpeg}');
+
+---
+
+<DefaultLayout title="Stanford Running Club | Home">
+    <section class="p-4">
+        <div class="flex flex-col items-center justify-center grow relative max-w-screen-lg mx-auto rounded lg:my-16 py-32">
+            <h1 class="z-20 text-8xl font-black text-white text-center">{heroText}</h1>
+            <Image src={hero()} alt="Stanford Running Club Hero Image" class="absolute inset-0 w-full h-full object-cover rounded" />
+            <div class="absolute inset-0 z-10 bg-black/80 w-full h-full rounded"/>
+            <Icon name="mdi:chevron-down" class="text-4xl z-20 text-white" /> 
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 my-20">
+        <ScheduleCard
+            title={schedule.claw.title}
+            description={schedule.claw.description}
+            days={schedule.claw.days}
+            time={schedule.claw.time}
+            location={schedule.claw.location}
+            image={schedule.claw.image}
+            difficulty={schedule.claw.difficulty}
+        />
+        <ScheduleCard
+            title={schedule.track.title}
+            description={schedule.track.description}
+            days={schedule.track.days}
+            time={schedule.track.time}
+            location={schedule.track.location}
+            image={schedule.track.image}
+            difficulty={schedule.track.difficulty}
+        />
+        <ScheduleCard
+            title={schedule.fun.title}
+            description={schedule.fun.description}
+            days={schedule.fun.days}
+            time={schedule.fun.time}
+            location={schedule.fun.location}
+            image={schedule.fun.image}
+            difficulty={schedule.fun.difficulty}
+        />
+        <ScheduleCard
+            title={schedule.long.title}
+            description={schedule.long.description}
+            days={schedule.long.days}
+            time={schedule.long.time}
+            location={schedule.long.location}
+            image={schedule.long.image}
+            difficulty={schedule.long.difficulty}
+        />
+    </section>
+    <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 my-16 p-4">
+        <div class="flex flex-col items-center justify-center text-center mb-20">
+          <h2 class="text-2xl lg:text-3xl font-extrabold drop-shadow-xl text-center">HOW TO JOIN?</h2>
+          <h2 class="text-5xl lg:text-7xl font-black text-center mt-4"><span class="bg-gradient-to-br from-red-700 via-primary-600 to-pink-600 text-5xl lg:text-8xl inline-block text-transparent bg-clip-text">EASY!</span> <br /> Just <span class="underline underline-offset-4">show up!</span></h2>
+          <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mt-8">
+            <a href={'/'} class="px-8 py-4 bg-primary-500 text-white text-xl font-semibold rounded hover:bg-primary-600 transition-colors">
+              Join the Mailing List
+            </a>
+          </div>
+        </div>
+        <div class="w-full h-full">
+          <Image src={joinus()} alt="Runners" class="w-full h-full object-cover" />
+        </div>
+      </section>
+      <section class="max-w-5xl mx-auto my-20 p-4">
+        <h2 class="text-5xl lg:text-7xl font-black drop-shadow-xl text-center mb-8">Calendar</h2>
+        <iframe title="Running Calendar" src={calendarURL} width="100%" height="600" />
+      </section>
+</DefaultLayout>
