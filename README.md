@@ -1,54 +1,79 @@
-# Astro Starter Kit: Basics
+# Stanford Running Club
 
-```sh
-npm create astro@latest -- --template basics
+Whether you're a beginner or an experienced runner, Stanford Running Club welcomes everyone! We organize regular group runs, track workouts, and fun running events throughout the week. From casual campus loops to epic Stanford-to-Sea adventures, we're your running community at Stanford. 🌲
+
+## 🏃‍♂️ Weekly Schedule
+
+- **Claw Run** (Tue/Wed 4:45pm): Casual group runs with various pace groups
+- **Track Workout** (Mon/Thu 6:00pm): Speed training for all levels
+- **Fun Run** (Fri 4:45pm): Special themed runs and adventures
+- **Long Run** (Sat 9:30am): Explore Bay Area trails
+
+## 🤝 Contributing
+
+### No Code Required
+
+You can contribute to this website without any coding knowledge! Simply modify the configuration files in the `/src/config` folder:
+
+- `home.ts`: Schedule, hero section, and important links
+- `about.ts`: Club description, images, and traditions
+- `runs.ts`: Running routes and descriptions
+- `team.ts`: Information about the competitive team & records
+- `contact.ts`: Contact information for the club officers
+
+To update these files:
+1. Navigate to the file you want to edit in the `/src/config` folder
+2. Edit the text within the quotation marks
+3. For images, add new images to the appropriate folder and update the file paths
+4. Follow the "Deploying to Github" section below to submit your changes
+
+### Code Contributions
+
+This website is built with [Astro](https://astro.build), a modern web framework. The project structure follows Astro conventions:
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
-│   └── favicon.svg
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│ ├── components/
+│ ├── layouts/
+│ ├── pages/
+│ └── config/
+└── public/
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+For development (pnpm recommended):
+1. Install dependencies: `pnpm install` or `npm install`
+2. Start local server: `pnpm dev` or `npm run dev`
+3. Build production: `pnpm build` or `npm run build`
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Refer to [Astro's documentation](https://docs.astro.build) for detailed information about components, routing, and styling.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Deploying to Github
 
-## 🧞 Commands
+1. **Fork the Repository**
+   - Visit the repository at [pythonicode/stanford-running-club](https://github.com/pythonicode/stanford-running-club)
+   - Click the "Fork" button in the top-right corner
+   - This creates your own copy of the repository
 
-All commands are run from the root of the project, from a terminal:
+2. **Make Your Changes**
+   - On your forked repository, make the desired changes
+   - For file edits directly on Github:
+     - Navigate to the file you want to edit
+     - Click the pencil icon (Edit file)
+     - Make your changes
+     - At the bottom, add a description of your changes
+     - Click "Commit changes"
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. **Create a Pull Request**
+   - Return to your forked repository
+   - Click "Contribute" > "Open pull request"
+   - Add a title describing your changes
+   - In the description, explain what you modified and why
+   - Click "Create pull request"
 
-## 👀 Want to learn more?
+4. **Request Review**
+   - On the right sidebar of your pull request, click the gear icon next to "Reviewers"
+   - Search for and select "pythonicode"
+   - Wait for review and address any feedback
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+For assistance with this process, feel free to open an issue on the repository or contact the maintainers (Anthony Riley).
