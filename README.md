@@ -2,13 +2,6 @@
 
 Whether you're a beginner or an experienced runner, Stanford Running Club welcomes everyone! We organize regular group runs, track workouts, and fun running events throughout the week. From casual campus loops to epic Stanford-to-Sea adventures, we're your running community at Stanford. 🌲
 
-## 🏃‍♂️ Weekly Schedule
-
-- **Claw Run** (Tue/Wed 4:45pm): Casual group runs with various pace groups
-- **Track Workout** (Mon/Thu 6:00pm): Speed training for all levels
-- **Fun Run** (Fri 4:45pm): Special themed runs and adventures
-- **Long Run** (Sat 9:30am): Explore Bay Area trails
-
 ## 🤝 Contributing
 
 ### No Code Required
