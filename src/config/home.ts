@@ -34,7 +34,7 @@ export const schedule = {
     description:
       "An exciting variety of adventures from fountain hopping to ice cream runs",
     days: ["Friday"],
-    time: "4:15pm",
+    time: "4:45pm",
     location: {
       name: "The Claw",
       url: "",
