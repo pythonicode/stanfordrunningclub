@@ -8,7 +8,7 @@ export const schedule = {
     description:
       "A casual group run with a variety of pace groups, distances and routes around campus",
     days: ["Tuesday", "Wednesday"],
-    time: "4:15pm",
+    time: "4:45pm",
     location: {
       name: "The Claw",
       url: "",
