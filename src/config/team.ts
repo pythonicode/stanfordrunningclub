@@ -151,6 +151,17 @@ export const records: Records = {
         },
       ],
     },
+    {
+      name: "3000M Race Walk",
+      records: [
+        {
+          name: "Frank DeGuire",
+          time: "24:45.91",
+          date: "Winter 2025",
+          location: "Cal Opener",
+        },
+      ],
+    },
   ],
   xc: [
     {
