@@ -62,7 +62,7 @@ export const mailingListURL =
   "https://mailman.stanford.edu/mailman/listinfo/runningclub";
 
 export const calendarURL =
-  "https://outlook.office365.com/owa/calendar/3d6c0cdd40fd4f728fb575da26bc71ed@stanford.edu/2689cb5f4a434de5adff799992c3ee3c1962905941190256865/calendar.html";
+  "https://outlook.office365.com/owa/calendar/b6f73639d6304cdab5c7a39f7cf7092a@stanford.edu/e8a81f3347a346768bc04112919325d715752844312060503601/calendar.html";
 
 type ScheduleType = "claw" | "track" | "fun" | "long";
 

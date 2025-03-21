@@ -31,6 +31,23 @@ export const records: Records = {
           date: "Winter 2018",
           location: "Aggie Open",
         },
+        {
+          name: "Irene Alisjahbana",
+          time: "12.83",
+          date: "Spring 2018",
+          location: "NIRCA T&F Nationals",
+        },
+      ],
+    },
+    {
+      name: "110M Hurdles",
+      records: [
+        {
+          name: "Robert Wood",
+          time: "15.84",
+          date: "Winter 2024",
+          location: "Bulldog Invitational",
+        },
       ],
     },
     {
@@ -43,10 +60,10 @@ export const records: Records = {
           location: "Cal All-Comers",
         },
         {
-          name: "Haley Brogan",
-          time: "26.30",
-          date: "Winter 2016",
-          location: "Los Gatos All Comers",
+          name: "Irene Alisjahbana",
+          time: "26.06",
+          date: "Spring 2018",
+          location: "NIRCA T&F Nationals",
         },
       ],
     },
@@ -59,6 +76,29 @@ export const records: Records = {
           date: "Winter 2016",
           location: "Berkeley Invite",
         },
+        {
+          name: "Laura Vanderweyen",
+          time: "1:02.92",
+          date: "Winter 2023",
+          location: "SJTC Winter All-Comer",
+        },
+      ],
+    },
+    {
+      name: "400M Hurdles",
+      records: [
+        {
+          name: "Anthony Sausedo",
+          time: "55.03",
+          date: "Winter 2023",
+          location: "Kim Duyst Invitational",
+        },
+        {
+          name: "Juliet Horenziak",
+          time: "1:09.89",
+          date: "Winter 2024",
+          location: "Bulldog Invitational",
+        },
       ],
     },
     {
@@ -68,13 +108,13 @@ export const records: Records = {
           name: "Mike Becich",
           time: "1:54",
           date: "Spring 2016",
-          location: "NIRCA Nationals",
+          location: "NIRCA T&F Nationals",
         },
         {
           name: "Laura Vanderweyen",
           time: "2:16.95",
           date: "Spring 2023",
-          location: "NIRCA Nationals",
+          location: "NIRCA T&F Nationals",
         },
       ],
     },
@@ -91,7 +131,7 @@ export const records: Records = {
           name: "Laura Vanderweyen",
           time: "4:43.90",
           date: "Spring 2023",
-          location: "NIRCA Nationals",
+          location: "NIRCA T&F Nationals",
         },
       ],
     },
@@ -130,6 +170,23 @@ export const records: Records = {
       ],
     },
     {
+      name: "3000M Steeplechase",
+      records: [
+        {
+          name: "Spencer Seay",
+          time: "10:27.35",
+          date: "Winter 2025",
+          location: "West Coast Invite",
+        },
+        {
+          name: "Juliet Horenziak",
+          time: "12:00.72",
+          date: "Winter 2025",
+          location: "West Coast Invite",
+        },
+      ],
+    },
+    {
       name: "3200M / 2 MILE",
       records: [
         {
@@ -152,8 +209,8 @@ export const records: Records = {
         {
           name: "Molly Dicke",
           time: "18:03.14",
-          date: "Unknown",
-          location: "Unknown",
+          date: "Winter 2015",
+          location: "CSU Stanislaus Kim Duyst Invitational",
         },
       ],
     },
@@ -174,10 +231,10 @@ export const records: Records = {
       name: "6000M",
       records: [
         {
-          name: "Chloe Taylor",
-          time: "22:11.5 ",
-          date: "Fall 2022",
-          location: "Santa Clara Bronco Invitational",
+          name: "Nicole Ticea",
+          time: "22:10.4 ",
+          date: "Fall 2018",
+          location: "NIRCA XC Nationals",
         },
       ],
     },
@@ -186,9 +243,9 @@ export const records: Records = {
       records: [
         {
           name: "Michael Thorburn",
-          time: "25:47.53",
-          date: "Fall 2023",
-          location: "NIRCA Nationals",
+          time: "25:33.50",
+          date: "Fall 2024",
+          location: "Santa Clara Bronco Invitational",
         },
         {
           name: "Jack Ryan",
@@ -208,6 +265,12 @@ export const records: Records = {
           time: "1:14:00",
           date: "Winter 2025",
           location: "Napa Valley Half Marathon",
+        },
+        {
+          name: "Simone Angela Winkler",
+          time: "1:40:13",
+          date: "Spring 2015",
+          location: "NIRCA Half Marathon Nationals",
         },
       ],
     },
@@ -248,7 +311,7 @@ export const records: Records = {
           name: "Frank DeGuire",
           time: "17'8\"",
           date: "Winter 2024",
-          location: "NIRCA Nationals",
+          location: "NIRCA T&F Nationals",
         },
       ],
     },
