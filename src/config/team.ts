@@ -121,6 +121,12 @@ export const records: Records = {
           date: "Winter 2024",
           location: "Cal All-Comers",
         },
+        {
+          name: "Caroline Cahilly",
+          time: "11:42",
+          date: "Winter 2025",
+          location: "Cal All-Comers",
+        },
       ],
     },
     {
