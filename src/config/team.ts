@@ -247,12 +247,6 @@ export const records: Records = {
           date: "Fall 2024",
           location: "Santa Clara Bronco Invitational",
         },
-        {
-          name: "Jack Ryan",
-          time: "25:47.9",
-          date: "Fall 2017",
-          location: "Santa Clara Bronco Invitational",
-        },
       ],
     },
   ],
