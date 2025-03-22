@@ -117,6 +117,36 @@ export const offCampusRoutes: Route[] = [
     climb: 153,
     stravaId: "3109579762431542422",
   },
+  {
+    title: "Woodside Road-Kings Mountain Road-Greer Road",
+    distance: 20.05,
+    climb: 575,
+    stravaId: "3287642501917833444",
+  },
+  {
+    title: "Foothills 10 Miler",
+    distance: 16.40,
+    climb: 541,
+    stravaId: "3328221744167345968",
+  },
+  {
+    title: "Foothills 12.5 Miler",
+    distance: 20.08,
+    climb: 669.34,
+    stravaId: "3328219475672624312",
+  },
+  {
+    title: "Wunderlich Bear Gulch",
+    distance: 15.88,
+    climb: 603.81,
+    stravaId: "3338436106536510854",
+  },
+  {
+    title: "Skyline Ridge Trail, Peters Creek and Canyon Trail",
+    distance: 22.92,
+    climb: 770.53,
+    stravaId: "3338439194181425438",
+  },
 ];
 
 interface Route {
