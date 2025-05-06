@@ -22,7 +22,7 @@ export const traditions: Tradition[] = [
     title: "Dish Run",
     description:
       "3.25 mile run through the iconic Dish trail at Stanford, sponsored by the Stanford Rec and Wellness in partnership with Stanford Running Club.",
-    when: ["Spring"],
+    when: ["Winter"],
   },
   {
     image: "/src/images/about/laglap.webp",
