@@ -272,10 +272,10 @@ export const records: Records = {
       name: "Marathon",
       records: [
         {
-          name: "Kogen Brown",
-          time: "2:49:59",
+          name: "David Walton",
+          time: "2:37:01",
           date: "Spring 2025",
-          location: "Mountains 2 Beach Marathon",
+          location: "OC Marathon",
         },
         {
           name: "Eva Shen",
