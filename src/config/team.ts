@@ -356,9 +356,9 @@ export const records: Records = {
       name: "Backwards 100M",
       records: [
         {
-          name: "Frank DeGuire",
-          time: "18.11s",
-          date: "Fall 2024",
+          name: "Max Manson",
+          time: "16.4s",
+          date: "Spring 2025",
           location: "Cobb Track",
         },
       ],
