@@ -353,6 +353,17 @@ export const records: Records = {
       ],
     },
     {
+      name: "Lake Lag Ultra (6 Hours)",
+      records: [
+        {
+          name: "David Walton & Michael Ruf (Tie)",
+          time: "42 Laps, 36.62 Miles",
+          date: "Spring 2025",
+          location: "Lake Lagunita",
+        },
+      ],
+    },
+    {
       name: "Backwards 100M",
       records: [
         {
