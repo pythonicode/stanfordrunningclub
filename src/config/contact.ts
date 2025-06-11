@@ -7,14 +7,14 @@ export const contacts: ContactGroup[] = [
     role: "Co-President",
     people: [
       {
-        name: "Spencer Seay",
-        email: "spenseay@stanford.edu",
-        image: "/src/images/contact/spencer.jpg",
+        name: "David Walton",
+        email: "dawalton@stanford.edu",
+        image: "/src/images/contact/david.png",
       },
       {
-        name: "Oriana Riley",
-        email: "oriley@stanford.edu",
-        image: "/src/images/contact/oriana.jpg",
+        name: "Juliet Horenziak",
+        email: "jhornezi@stanford.edu",
+        image: "/src/images/contact/juliet.jpg",
       },
     ],
   },
