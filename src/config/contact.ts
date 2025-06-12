@@ -13,7 +13,7 @@ export const contacts: ContactGroup[] = [
       },
       {
         name: "Juliet Horenziak",
-        email: "jhornezi@stanford.edu",
+        email: "jhorenzi@stanford.edu",
         image: "/src/images/contact/julieth.jpg",
       },
     ],
