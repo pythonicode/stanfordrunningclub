@@ -1,6 +1,9 @@
 export const heroImage = "/src/images/hero.webp";
 export const heroText = "Run with us.";
 
+export const banner =
+  "Hey you! We will have our regular schedule during NSO week, so please stop by!";
+
 export const schedule = {
   claw: {
     image: "/src/images/schedule/claw.webp",

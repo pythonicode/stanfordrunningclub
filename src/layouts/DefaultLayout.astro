@@ -11,9 +11,13 @@ import logo from "../images/logo.png";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import MobileMenu from "../components/navigation/MobileMenu.astro";
+import { banner } from "../config/home";
 ---
 
 <RootLayout title={title}>
+    <div class="bg-primary-600 text-white p-4 text-center">
+        <p class="text-sm">{banner}</p>
+    </div>
     <header class="max-w-screen-lg mx-auto p-4 flex justify-between items-center w-full">
         <a href="/" class="flex items-center gap-2">
 			<Image src={logo} alt="Stanford Run Club Logo" class="w-6 h-6" />
