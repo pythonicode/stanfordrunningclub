@@ -231,10 +231,10 @@ export const records: Records = {
       name: "6000M",
       records: [
         {
-          name: "Nicole Ticea",
-          time: "22:10.4 ",
-          date: "Fall 2018",
-          location: "NIRCA XC Nationals",
+          name: "Sydney Topping",
+          time: "21:31.83",
+          date: "Fall 2025",
+          location: "NIRCA Pacific Regionals",
         },
       ],
     },
