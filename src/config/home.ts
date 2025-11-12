@@ -11,7 +11,7 @@ export const schedule = {
     description:
       "A casual group run with a variety of pace groups, distances and routes around campus",
     days: ["Tuesday", "Wednesday"],
-    time: "4:45pm",
+    time: "4:00pm",
     location: {
       name: "The Claw",
       url: "",
@@ -37,7 +37,7 @@ export const schedule = {
     description:
       "An exciting variety of adventures from fountain hopping to ice cream runs",
     days: ["Friday"],
-    time: "4:45pm",
+    time: "4:00pm",
     location: {
       name: "The Claw",
       url: "",
@@ -50,7 +50,7 @@ export const schedule = {
     description:
       "Explore the beautiful trails of the Bay Area and test your endurance",
     days: ["Saturday"],
-    time: "9:30am",
+    time: "9:00am",
     location: {
       name: "Escondido Turnaround",
       url: "",
