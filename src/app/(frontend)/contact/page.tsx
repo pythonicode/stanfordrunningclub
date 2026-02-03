@@ -30,37 +30,51 @@ export default async function ContactPage() {
   const encodedGroupMeUrl = obfuscateUrl(homeData.groupMeUrl)
 
   return (
-    <div className="bg-background">
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        {/* Header - Swiss Design: Bold, Centered Typography */}
-        <h1 className="text-5xl lg:text-7xl font-black text-foreground text-center mb-12">
-          GET IN TOUCH
-        </h1>
+    <div className="bg-background min-h-[calc(100vh-4rem)]">
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div className="mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground uppercase tracking-tight mb-3">
+            GET IN TOUCH
+          </h1>
+          <div className="w-24 h-1 bg-primary mb-8" />
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl">
+            Have questions about joining the club? Want to learn more about our runs? Reach out to us on GroupMe or contact our leadership team directly.
+          </p>
+        </div>
 
-        {/* CTA Button - Swiss Design */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12">
+        {/* CTA Section */}
+        <div className="mb-20">
           <GroupMeButton
             encodedUrl={encodedGroupMeUrl}
-            className="px-8 py-4 bg-primary text-primary-foreground text-xl font-semibold rounded-sm hover:opacity-90 transition-opacity border-b-4 border-destructive"
+            className="px-8 py-4 bg-primary text-primary-foreground text-sm font-bold uppercase tracking-wide hover:opacity-90 transition-opacity border-b-2 border-destructive"
           >
-            Join our GroupMe
+            JOIN OUR GROUPME
           </GroupMeButton>
         </div>
 
-        {/* Divider with Text - Swiss Design: Clean Separation */}
-        <div className="flex items-center justify-center gap-8 text-muted-foreground my-12">
-          <hr className="flex-1 border-border" />
-          <span className="text-sm">or reach out directly</span>
-          <hr className="flex-1 border-border" />
+        {/* Divider */}
+        <div className="flex items-center gap-8 text-muted-foreground mb-16">
+          <hr className="flex-1 border-border border-t-2" />
+          <span className="text-xs uppercase tracking-wide font-bold">OR REACH OUT DIRECTLY</span>
+          <hr className="flex-1 border-border border-t-2" />
+        </div>
+
+        {/* Leadership Section */}
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-black text-foreground uppercase tracking-tight mb-3">
+            LEADERSHIP TEAM
+          </h2>
+          <div className="w-16 h-1 bg-primary mb-8" />
         </div>
 
         {/* Contacts Grid */}
         {contactsResult.docs.length === 0 ? (
-          <div className="text-center text-muted-foreground py-8">
-            <p className="m-0">No contacts available yet.</p>
+          <div className="text-center text-muted-foreground py-12">
+            <p className="text-sm uppercase tracking-wide font-semibold">NO CONTACTS AVAILABLE YET</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-16">
             {contactsResult.docs.map((contact) => (
               <ContactCard key={contact.id} contact={contact} />
             ))}
