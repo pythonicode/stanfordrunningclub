@@ -1,72 +1,199 @@
-# Stanford Running Club
+# Stanford Running Club Website
 
-Whether you're a beginner or an experienced runner, Stanford Running Club welcomes everyone! We organize regular group runs, track workouts, and fun running events throughout the week. From casual campus loops to epic Stanford-to-Sea adventures, we're your running community at Stanford. 🌲
+A modern website for the Stanford Running Club built with Next.js, Payload CMS, and deployed on Vercel.
 
-## 🤝 Contributing
+## For Non-Technical Maintainers (Content Editors)
 
-### No Code Required
+### Accessing the Admin Panel
 
-You can contribute to this website without any coding knowledge! Simply modify the configuration files in the `/src/config` folder:
+1. Go to `https://your-domain.com/admin`
+2. Log in with your admin credentials
+3. You can now edit all website content without touching code
 
-- `home.ts`: Schedule, hero section, and important links
-- `about.ts`: Club description, images, and traditions
-- `runs.ts`: Running routes and descriptions
-- `team.ts`: Information about the competitive team & records
-- `contact.ts`: Contact information for the club officers
+### Managing Content
 
-To update these files:
-1. Navigate to the file you want to edit in the `/src/config` folder
-2. Edit the text within the quotation marks
-3. For images, add new images to the appropriate folder and update the file paths
-4. Follow the "Deploying to Github" section below to submit your changes
+**Home Page**
+- Navigate to **Globals → Home** to edit hero text, GroupMe link, and calendar URL
 
-### Code Contributions
+**About Page**
+- Navigate to **Globals → About** to edit header, description, and photo gallery
+- Add/remove traditions in **Collections → Traditions**
 
-This website is built with [Astro](https://astro.build), a modern web framework. The project structure follows Astro conventions:
+**Runs Page**
+- Navigate to **Collections → Routes** to add/edit running routes
+- Add Strava route IDs to embed interactive maps
+
+**Team Page**
+- Navigate to **Globals → Team** to edit header, join URL, and coach info
+- Add/edit records in **Collections → Records**
+
+**Contact Page**
+- Navigate to **Collections → Contacts** to add/edit team member contact cards
+
+**Weekly Schedule**
+- Navigate to **Collections → Schedule** to edit weekly run times and locations
+
+### Creating New Admin Users
+
+1. Go to **Collections → Users** in the admin panel
+2. Click **Create New**
+3. Enter email and password
+4. Save
+
+---
+
+## For Technical Maintainers (Developers)
+
+### Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **CMS:** Payload CMS 3.0
+- **Database:** MongoDB
+- **Styling:** Tailwind CSS (Swiss Design System)
+- **Hosting:** Vercel
+- **Package Manager:** pnpm
+
+### Local Development Setup
+
+```bash
+# Install dependencies
+pnpm install
+
+# Set up environment variables
+cp .env.example .env
+
+# Add your MongoDB connection string to .env
+MONGODB_URI=your_mongodb_connection_string
+PAYLOAD_SECRET=your_random_secret_key
+
+# Run development server
+pnpm dev
+
+# Access the site at http://localhost:3000
+# Access admin panel at http://localhost:3000/admin
+```
+
+### Project Structure
 
 ```
-/
-├── src/
-│ ├── components/
-│ ├── layouts/
-│ ├── pages/
-│ └── config/
-└── public/
+src/
+├── app/(frontend)/        # Public-facing pages
+│   ├── page.tsx          # Home page
+│   ├── about/            # About page
+│   ├── runs/             # Routes page
+│   ├── team/             # Team & records page
+│   └── contact/          # Contact page
+├── collections/          # Payload collections (data models)
+├── globals/              # Payload globals (singleton data)
+├── components/           # React components
+│   ├── Header.tsx        # Site header
+│   └── custom/           # Page-specific components
+├── seed/                 # Database seeding scripts
+└── lib/                  # Utility functions
 ```
 
-For development (pnpm recommended):
-1. Install dependencies: `pnpm install` or `npm install`
-2. Start local server: `pnpm dev` or `npm run dev`
-3. Build production: `pnpm build` or `npm run build`
+### Deployment on Vercel
 
-Refer to [Astro's documentation](https://docs.astro.build) for detailed information about components, routing, and styling.
+1. **Connect Repository**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel auto-detects Next.js
 
-### Deploying to Github
+2. **Environment Variables**
+   - Add `MONGODB_URI` (your MongoDB connection string)
+   - Add `PAYLOAD_SECRET` (generate with `openssl rand -base64 32`)
+   - Add `NEXT_PUBLIC_SERVER_URL` (your Vercel domain)
 
-1. **Fork the Repository**
-   - Visit the repository at [pythonicode/stanford-running-club](https://github.com/pythonicode/stanford-running-club)
-   - Click the "Fork" button in the top-right corner
-   - This creates your own copy of the repository
+3. **Deploy**
+   - Vercel automatically deploys on every push to main
+   - Access admin panel at `https://your-domain.com/admin`
 
-2. **Make Your Changes**
-   - On your forked repository, make the desired changes
-   - For file edits directly on Github:
-     - Navigate to the file you want to edit
-     - Click the pencil icon (Edit file)
-     - Make your changes
-     - At the bottom, add a description of your changes
-     - Click "Commit changes"
+### Creating the First Admin User
 
-3. **Create a Pull Request**
-   - Return to your forked repository
-   - Click "Contribute" > "Open pull request"
-   - Add a title describing your changes
-   - In the description, explain what you modified and why
-   - Click "Create pull request"
+After first deployment, create an admin user via the Payload API:
 
-4. **Request Review**
-   - On the right sidebar of your pull request, click the gear icon next to "Reviewers"
-   - Search for and select "pythonicode"
-   - Wait for review and address any feedback
+```bash
+# Option 1: Use the seed script (if available)
+pnpm seed
 
-For assistance with this process, feel free to open an issue on the repository or contact the maintainers (Anthony Riley).
+# Option 2: Create manually via admin panel
+# Visit https://your-domain.com/admin
+# The first user registration will create an admin
+```
+
+### Design System
+
+This site follows a **Swiss Design System** with:
+- Uppercase typography with tight tracking
+- Cardinal red (#8C1515) accent color
+- Bold, geometric layouts
+- 2px borders for emphasis
+- See `DESIGN_SYSTEM.md` for full guidelines
+
+### Key Commands
+
+```bash
+# Development
+pnpm dev              # Start dev server
+pnpm build            # Build for production
+pnpm start            # Run production build locally
+
+# Database seeding
+pnpm seed             # Seed all data
+npx tsx src/seed/home.ts      # Seed specific collection
+
+# Code quality
+pnpm lint             # Run ESLint
+```
+
+### Common Tasks
+
+**Adding a new page:**
+1. Create page in `src/app/(frontend)/your-page/page.tsx`
+2. Add link to `src/components/Header.tsx`
+3. Follow existing page patterns for consistency
+
+**Adding a new collection:**
+1. Create collection in `src/collections/YourCollection.ts`
+2. Add to `payload.config.ts` collections array
+3. Create seed script in `src/seed/yourCollection.ts`
+
+**Updating styles:**
+- Global styles: `src/app/(frontend)/styles.css`
+- Component styles: Use Tailwind classes
+- Follow `DESIGN_SYSTEM.md` guidelines
+
+### Environment Variables
+
+```env
+# Required
+MONGODB_URI=mongodb+srv://...
+PAYLOAD_SECRET=your-secret-key
+NEXT_PUBLIC_SERVER_URL=https://your-domain.com
+
+# Optional
+NODE_ENV=production
+```
+
+### Troubleshooting
+
+**Strava embeds not loading:**
+- Ensure the Strava script is loaded in `runs/page.tsx`
+- Check that route has a valid `stravaId`
+
+**Admin panel not accessible:**
+- Verify `PAYLOAD_SECRET` is set
+- Check MongoDB connection
+- Ensure first user is created
+
+**Build fails on Vercel:**
+- Check environment variables are set
+- Verify MongoDB connection string is correct
+- Review build logs for specific errors
+
+### Support
+
+For questions or issues:
+- Check existing code patterns in similar pages
+- Review `DESIGN_SYSTEM.md` for styling guidelines
+- Contact previous maintainers for handoff details
