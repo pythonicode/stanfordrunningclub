@@ -4,6 +4,8 @@ import Image from 'next/image'
 import config from '@/payload.config'
 import ImageCarousel from '@/components/custom/ImageCarousel'
 
+export const revalidate = 60 // Revalidate page every 60 seconds (ISR)
+
 export const metadata = {
   title: 'Stanford Running Club | About',
   description: 'Learn more about Stanford Running Club',

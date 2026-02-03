@@ -7,6 +7,8 @@ import ScheduleCard from '@/components/custom/ScheduleCard'
 import ParallaxHero from '@/components/custom/ParallaxHero'
 import { obfuscateUrl } from '@/lib/encodeUrl'
 
+export const revalidate = 60 // Revalidate page every 60 seconds (ISR)
+
 export const metadata = {
   title: 'Stanford Running Club | Home',
   description: 'Join Stanford Running Club for runs around campus!',

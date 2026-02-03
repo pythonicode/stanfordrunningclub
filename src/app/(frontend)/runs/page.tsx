@@ -4,6 +4,8 @@ import config from '@/payload.config'
 import RouteCard from '@/components/custom/RouteCard'
 import Script from 'next/script'
 
+export const revalidate = 60 // Revalidate page every 60 seconds (ISR)
+
 export const metadata = {
   title: 'Stanford Running Club | Our Runs',
   description: 'Explore our running routes around Stanford campus and beyond',

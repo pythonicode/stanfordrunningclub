@@ -3,6 +3,8 @@ import React from 'react'
 import Image from 'next/image'
 import config from '@/payload.config'
 
+export const revalidate = 60 // Revalidate page every 60 seconds (ISR)
+
 export const metadata = {
   title: 'Stanford Running Club | History',
   description: 'Explore the history of Stanford Running Club',

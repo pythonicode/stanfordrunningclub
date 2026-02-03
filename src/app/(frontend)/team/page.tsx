@@ -4,6 +4,8 @@ import Image from 'next/image'
 import config from '@/payload.config'
 import type { Record as RecordType } from '@/payload-types'
 
+export const revalidate = 60 // Revalidate page every 60 seconds (ISR)
+
 export const metadata = {
   title: 'Stanford Running Club | The Team',
   description: 'Meet the Stanford Running Club team and view our records',

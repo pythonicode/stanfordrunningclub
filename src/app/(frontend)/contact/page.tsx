@@ -6,6 +6,8 @@ import GroupMeButton from '@/components/custom/GroupMeButton'
 import { obfuscateUrl } from '@/lib/encodeUrl'
 import { Metadata } from 'next'
 
+export const revalidate = 60 // Revalidate page every 60 seconds (ISR)
+
 export const metadata: Metadata = {
   title: 'Stanford Running Club | Contact',
   description: 'Get in touch with the Stanford Running Club team',
