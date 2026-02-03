@@ -74,6 +74,7 @@ export interface Config {
     records: Record;
     routes: Route;
     contacts: Contact;
+    history: History;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -88,6 +89,7 @@ export interface Config {
     records: RecordsSelect<false> | RecordsSelect<true>;
     routes: RoutesSelect<false> | RoutesSelect<true>;
     contacts: ContactsSelect<false> | ContactsSelect<true>;
+    history: HistorySelect<false> | HistorySelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -301,6 +303,35 @@ export interface Contact {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "history".
+ */
+export interface History {
+  id: number;
+  /**
+   * Year of the event (e.g., 2024)
+   */
+  year: number;
+  /**
+   * Title of the historical event
+   */
+  title: string;
+  /**
+   * Description of the event
+   */
+  body: string;
+  /**
+   * Optional image for this event
+   */
+  image?: (number | null) | Media;
+  /**
+   * Order in timeline (lower = earlier)
+   */
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -350,6 +381,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'contacts';
         value: number | Contact;
+      } | null)
+    | ({
+        relationTo: 'history';
+        value: number | History;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -502,6 +537,19 @@ export interface ContactsSelect<T extends boolean = true> {
   image?: T;
   role?: T;
   customRole?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "history_select".
+ */
+export interface HistorySelect<T extends boolean = true> {
+  year?: T;
+  title?: T;
+  body?: T;
+  image?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -50,6 +50,14 @@ export default function Header() {
             </li>
             <li>
               <Link
+                href="/history"
+                className="px-3 py-2 hover:bg-muted text-xs font-semibold uppercase tracking-wide transition-colors no-underline text-foreground"
+              >
+                HISTORY
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/contact"
                 className="px-4 py-2 bg-primary text-primary-foreground hover:opacity-90 text-xs font-bold uppercase tracking-wide transition-opacity no-underline border-b-2 border-destructive"
               >
@@ -105,6 +113,15 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   TEAM
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/history"
+                  className="block px-3 py-3 hover:bg-muted text-xs font-semibold uppercase tracking-wide no-underline text-foreground border-b border-border"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  HISTORY
                 </Link>
               </li>
               <li>
