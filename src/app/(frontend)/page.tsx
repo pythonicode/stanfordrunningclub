@@ -4,6 +4,7 @@ import Image from 'next/image'
 import config from '@/payload.config'
 import GroupMeButton from '@/components/custom/GroupMeButton'
 import ScheduleCard from '@/components/custom/ScheduleCard'
+import ParallaxHero from '@/components/custom/ParallaxHero'
 import { obfuscateUrl } from '@/lib/encodeUrl'
 
 export const metadata = {
@@ -35,39 +36,22 @@ export default async function HomePage() {
 
   return (
     <div className="bg-background">
-      {/* Hero Section - Swiss Design: Bold Typography on Photography */}
-      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-        {heroImageData && heroImageData.url ? (
-          <>
-            <Image
-              src={heroImageData.url}
-              alt={heroImageData.alt || 'Stanford Running Club'}
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-black/70 z-10" />
-          </>
-        ) : (
-          <div className="absolute inset-0 bg-muted" />
-        )}
-        
-        <div className="relative z-20 text-center px-4">
-          <h1
-            className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none uppercase tracking-tight"
-            style={{
-              textShadow: `
-                0 4px 32px rgba(0,0,0,0.65),
-                0 0px 60px rgba(0,0,0,0.4),
-                0 12px 48px rgba(0,0,0,0.8)
-              `,
-            }}
-          >
-            {homeData.heroText}
-          </h1>
-        </div>
-      </section>
+      {/* Hero Section - Swiss Design: Bold Typography on Photography with Parallax */}
+      {heroImageData && heroImageData.url ? (
+        <ParallaxHero
+          imageUrl={heroImageData.url}
+          imageAlt={heroImageData.alt || 'Stanford Running Club'}
+          heroText={homeData.heroText}
+        />
+      ) : (
+        <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-muted">
+          <div className="relative z-20 text-center px-4">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-none uppercase tracking-tight">
+              {homeData.heroText}
+            </h1>
+          </div>
+        </section>
+      )}
 
       {/* Schedule Section - Grid-Based Layout */}
       <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
