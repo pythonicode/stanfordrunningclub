@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import { Route } from '@/payload-types'
 
 /**
  * Seed script for Routes
@@ -169,7 +170,7 @@ async function seedRoutes() {
     for (const route of campusRoutes) {
       const created = await payload.create({
         collection: 'routes',
-        data: route,
+        data: route as Route,
       })
       console.log(`✅ Created campus route: ${created.title}`)
     }
@@ -230,7 +231,7 @@ async function seedRoutes() {
     for (const route of offCampusRoutes) {
       const created = await payload.create({
         collection: 'routes',
-        data: route,
+        data: route as Route,
       })
       console.log(`✅ Created off-campus route: ${created.title}`)
     }

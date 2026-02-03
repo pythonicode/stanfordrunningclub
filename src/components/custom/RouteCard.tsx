@@ -26,10 +26,10 @@ export default function RouteCard({ route }: RouteCardProps) {
 
     // Function to initialize Strava embeds
     const initStravaEmbed = () => {
-      if (typeof window !== 'undefined' && (window as any).__STRAVA_EMBED_BOOTSTRAP__) {
+      if (typeof window !== 'undefined' && (window as unknown as { __STRAVA_EMBED_BOOTSTRAP__: () => void }).__STRAVA_EMBED_BOOTSTRAP__) {
         try {
           // Call the bootstrap function to initialize all embeds on the page
-          ;(window as any).__STRAVA_EMBED_BOOTSTRAP__()
+          ;(window as unknown as { __STRAVA_EMBED_BOOTSTRAP__: () => void }).__STRAVA_EMBED_BOOTSTRAP__()
           return true
         } catch (error) {
           console.error('Error initializing Strava embed:', error)

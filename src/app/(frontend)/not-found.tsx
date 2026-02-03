@@ -18,7 +18,7 @@ export default function NotFound() {
         </h2>
         
         <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-prose mx-auto">
-          The page you're looking for doesn't exist. It might have been moved or deleted.
+          The page you&apos;re looking for doesn&apos;t exist. It might have been moved or deleted.
         </p>
 
         {/* Action Buttons - Swiss Design: Clear Hierarchy */}

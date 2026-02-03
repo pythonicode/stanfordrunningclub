@@ -30,7 +30,7 @@ export default function Error({
         </h2>
         
         <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-prose mx-auto">
-          We encountered an unexpected error. Don't worry, our team has been notified and we're working on it.
+          We encountered an unexpected error. Don&apos;t worry, our team has been notified and we&apos;re working on it.
         </p>
 
         {/* Action Buttons - Swiss Design: Clear Hierarchy */}

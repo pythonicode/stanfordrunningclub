@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import { Record } from '@/payload-types'
 
 /**
  * Seed script for Records
@@ -73,7 +74,7 @@ async function seedRecords() {
     for (const record of allRecords) {
       const created = await payload.create({
         collection: 'records',
-        data: record,
+        data: record as Record,
       })
       console.log(`✅ Created record: ${created.category} - ${created.distance} - ${created.name}`)
     }

@@ -5,7 +5,6 @@ import Footer from '@/components/Footer'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import type { Metadata } from 'next'
-import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Stanford Running Club',
@@ -32,6 +31,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     banner = homeData.banner || null
   } catch (error) {
     // Silently fail - banner is optional
+    console.error('Error fetching banner', error)
     banner = null
   }
 
