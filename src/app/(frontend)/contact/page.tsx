@@ -1,16 +1,15 @@
 import { getPayload } from 'payload'
 import React from 'react'
 import config from '@/payload.config'
-import type { Contact as ContactType, Home } from '@/payload-types'
 import ContactCard from '@/components/custom/ContactCard'
 import GroupMeButton from '@/components/custom/GroupMeButton'
 import { obfuscateUrl } from '@/lib/encodeUrl'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Stanford Running Club | Contact',
   description: 'Get in touch with the Stanford Running Club team',
 }
-
 export default async function ContactPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })

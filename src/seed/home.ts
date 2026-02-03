@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import { Schedule } from '@/payload-types'
 
 /**
  * Seed script for Home page data
@@ -39,7 +40,7 @@ async function seedHome() {
   try {
     // 1. Update Home Global
     console.log('📝 Updating Home global...')
-    const homeGlobal = await payload.updateGlobal({
+    await payload.updateGlobal({
       slug: 'home',
       data: {
         banner: '', // Optional: Uncomment to add banner
@@ -110,7 +111,7 @@ async function seedHome() {
     for (const item of scheduleItems) {
       const created = await payload.create({
         collection: 'schedule',
-        data: item,
+          data: item as Schedule,
       })
       console.log(`✅ Created schedule item: ${created.title}`)
     }

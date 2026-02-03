@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import { Tradition } from '@/payload-types'
 
 /**
  * Seed script for About page data
@@ -102,7 +103,7 @@ async function seedAbout() {
     for (const tradition of traditions) {
       const created = await payload.create({
         collection: 'traditions',
-        data: tradition,
+          data: tradition as Tradition,
       })
       console.log(`✅ Created tradition: ${created.title}`)
     }

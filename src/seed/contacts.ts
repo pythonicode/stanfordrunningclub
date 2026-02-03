@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import { Contact } from '@/payload-types'
 
 /**
  * Seed script for Contacts
@@ -58,7 +59,7 @@ async function seedContacts() {
     for (const contact of contacts) {
       const created = await payload.create({
         collection: 'contacts',
-        data: contact,
+          data: contact as Contact,
       })
       console.log(`✅ Created contact: ${created.name}`)
     }

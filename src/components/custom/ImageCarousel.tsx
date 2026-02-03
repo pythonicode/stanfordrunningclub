@@ -6,7 +6,7 @@ import type { Media } from '@/payload-types'
 
 interface ImageCarouselProps {
   images: Array<{
-    image: string | Media
+    image: string | number | Media
     id?: string | null
   }>
 }

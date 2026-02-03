@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import type { Schedule, Media } from '@/payload-types'
+import type { Schedule } from '@/payload-types'
 
 interface ScheduleCardProps {
   schedule: Schedule

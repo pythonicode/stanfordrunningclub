@@ -58,7 +58,7 @@ export default function GroupMeButton({ encodedUrl, className, children }: Group
         window.open(fullUrl, '_blank', 'noopener,noreferrer')
       }
     } catch (error) {
-      console.error('Failed to decode URL')
+      console.error('Failed to decode URL', error)
     }
   }
 
@@ -118,7 +118,7 @@ export function encodeGroupMeUrl(url: string): string {
     const combined = `${protocol}::${domain}::${path}`
     return btoa(combined)
   } catch (error) {
-    console.error('Invalid URL')
+    console.error('Invalid URL', error)
     return ''
   }
 }
