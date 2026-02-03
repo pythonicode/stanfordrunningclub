@@ -2,7 +2,6 @@ import { getPayload } from 'payload'
 import React from 'react'
 import Image from 'next/image'
 import config from '@/payload.config'
-import type { History as HistoryType } from '@/payload-types'
 
 export const metadata = {
   title: 'Stanford Running Club | History',
