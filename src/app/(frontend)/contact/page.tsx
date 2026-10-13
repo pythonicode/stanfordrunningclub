@@ -2,7 +2,7 @@ import { getPayload } from 'payload'
 import React from 'react'
 import config from '@/payload.config'
 import ContactCard from '@/components/custom/ContactCard'
-import GroupMeButton from '@/components/custom/GroupMeButton'
+import DiscordButton from '@/components/custom/DiscordButton'
 import { obfuscateUrl } from '@/lib/encodeUrl'
 import { Metadata } from 'next'
 
@@ -28,8 +28,7 @@ export default async function ContactPage() {
     depth: 1,
   })
 
-  // Obfuscate the GroupMe URL server-side
-  const encodedGroupMeUrl = obfuscateUrl(homeData.groupMeUrl)
+  const encodedDiscordUrl = obfuscateUrl(homeData.discordUrl)
 
   return (
     <div className="bg-background min-h-[calc(100vh-4rem)]">
@@ -41,18 +40,18 @@ export default async function ContactPage() {
           </h1>
           <div className="w-24 h-1 bg-primary mb-8" />
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl">
-            Have questions about joining the club? Want to learn more about our runs? Reach out to us on GroupMe or contact our leadership team directly.
+            Have questions about joining the club? Want to learn more about our runs? Reach out to us on Discord or contact our leadership team directly.
           </p>
         </div>
 
         {/* CTA Section */}
         <div className="mb-20">
-          <GroupMeButton
-            encodedUrl={encodedGroupMeUrl}
+          <DiscordButton
+            encodedUrl={encodedDiscordUrl}
             className="px-8 py-4 bg-primary text-primary-foreground text-sm font-bold uppercase tracking-wide hover:opacity-90 transition-opacity border-b-2 border-destructive"
           >
-            JOIN OUR GROUPME
-          </GroupMeButton>
+            JOIN US ON DISCORD
+          </DiscordButton>
         </div>
 
         {/* Divider */}

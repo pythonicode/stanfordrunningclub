@@ -48,7 +48,7 @@ async function seedHome() {
         heroImage: IMAGE_IDS.hero,
         heroText: 'Run with us.',
         joinUsImage: IMAGE_IDS.joinUs,
-        groupMeUrl: 'https://groupme.com/join_group/86180166/GCpGnJlp',
+        discordUrl: 'https://discord.gg/',
         calendarUrl:
           'https://outlook.office365.com/owa/calendar/b6f73639d6304cdab5c7a39f7cf7092a@stanford.edu/e8a81f3347a346768bc04112919325d715752844312060503601/calendar.html',
       },

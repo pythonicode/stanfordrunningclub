@@ -622,7 +622,10 @@ export interface Home {
   heroImage: number | Media;
   heroText: string;
   joinUsImage: number | Media;
-  groupMeUrl: string;
+  /**
+   * Discord server invite link (shown on the home and contact pages)
+   */
+  discordUrl: string;
   calendarUrl: string;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -670,7 +673,7 @@ export interface HomeSelect<T extends boolean = true> {
   heroImage?: T;
   heroText?: T;
   joinUsImage?: T;
-  groupMeUrl?: T;
+  discordUrl?: T;
   calendarUrl?: T;
   updatedAt?: T;
   createdAt?: T;
