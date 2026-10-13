@@ -13,7 +13,7 @@ A modern website for the Stanford Running Club built with Next.js, Payload CMS, 
 ### Managing Content
 
 **Home Page**
-- Navigate to **Globals → Home** to edit hero text, GroupMe link, and calendar URL
+- Navigate to **Globals → Home** to edit hero text, Discord invite link, and calendar URL
 
 **About Page**
 - Navigate to **Globals → About** to edit header, description, and photo gallery
