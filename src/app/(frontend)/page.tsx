@@ -2,7 +2,7 @@ import { getPayload } from 'payload'
 import React from 'react'
 import Image from 'next/image'
 import config from '@/payload.config'
-import GroupMeButton from '@/components/custom/GroupMeButton'
+import DiscordButton from '@/components/custom/DiscordButton'
 import ScheduleCard from '@/components/custom/ScheduleCard'
 import ParallaxHero from '@/components/custom/ParallaxHero'
 import { obfuscateUrl } from '@/lib/encodeUrl'
@@ -33,8 +33,7 @@ export default async function HomePage() {
   const heroImageData = typeof homeData.heroImage === 'object' ? homeData.heroImage : null
   const joinUsImageData = typeof homeData.joinUsImage === 'object' ? homeData.joinUsImage : null
   
-  // Obfuscate the GroupMe URL server-side
-  const encodedGroupMeUrl = obfuscateUrl(homeData.groupMeUrl)
+  const encodedDiscordUrl = obfuscateUrl(homeData.discordUrl)
 
   return (
     <div className="bg-background">
@@ -95,12 +94,12 @@ export default async function HomePage() {
                 <div className="w-32 h-1 bg-primary mb-8" />
               </div>
               
-              <GroupMeButton
-                encodedUrl={encodedGroupMeUrl}
+              <DiscordButton
+                encodedUrl={encodedDiscordUrl}
                 className="px-8 py-4 bg-primary text-primary-foreground text-sm font-bold uppercase tracking-wide hover:opacity-90 transition-opacity border-b-2 border-destructive"
               >
-                JOIN OUR GROUPME
-              </GroupMeButton>
+                JOIN US ON DISCORD
+              </DiscordButton>
             </div>
             
             {/* Image */}

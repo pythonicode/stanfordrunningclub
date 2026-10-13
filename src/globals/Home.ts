@@ -32,10 +32,10 @@ export const Home: GlobalConfig = {
       required: true,
     },
     {
-      name: 'groupMeUrl',
+      name: 'discordUrl',
       type: 'text',
       required: true,
-      defaultValue: 'https://groupme.com/join_group/86180166/GCpGnJlp',
+      defaultValue: 'https://discord.gg/',
     },
     {
       name: 'calendarUrl',
