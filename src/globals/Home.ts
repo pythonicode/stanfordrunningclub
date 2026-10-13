@@ -35,9 +35,6 @@ export const Home: GlobalConfig = {
       name: 'discordUrl',
       type: 'text',
       required: true,
-      admin: {
-        description: 'Discord server invite link (shown on the home and contact pages)',
-      },
       defaultValue: 'https://discord.gg/',
     },
     {

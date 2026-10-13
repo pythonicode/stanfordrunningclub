@@ -622,9 +622,6 @@ export interface Home {
   heroImage: number | Media;
   heroText: string;
   joinUsImage: number | Media;
-  /**
-   * Discord server invite link (shown on the home and contact pages)
-   */
   discordUrl: string;
   calendarUrl: string;
   updatedAt?: string | null;
