@@ -2,7 +2,7 @@
  * Server-side utility to encode URLs for bot protection
  * This should only be used server-side or during build time
  */
-export function encodeGroupMeUrl(url: string): string {
+export function encodeExternalUrl(url: string): string {
   try {
     const urlObj = new URL(url)
     const protocol = urlObj.protocol.replace(':', '')
@@ -30,7 +30,7 @@ export function encodeGroupMeUrl(url: string): string {
  * This adds another layer of obfuscation on top of base64
  */
 export function obfuscateUrl(url: string): string {
-  const encoded = encodeGroupMeUrl(url)
+  const encoded = encodeExternalUrl(url)
   
   // Apply character shifting
   return encoded
