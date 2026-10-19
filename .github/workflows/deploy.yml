@@ -1,0 +1,60 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vercel-${{ github.event_name == 'push' && 'production' || format('preview-{0}', github.event.pull_request.number) }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.event_name == 'push' && 'Production' || 'Preview' }}
+      url: ${{ steps.deploy.outputs.url }}
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TARGET: ${{ github.event_name == 'push' && 'production' || 'preview' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@10 --activate
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel environment
+        run: vercel pull --yes --environment="$VERCEL_TARGET"
+
+      - name: Build
+        run: |
+          if [ "$VERCEL_TARGET" = "production" ]; then
+            vercel build --prod
+          else
+            vercel build
+          fi
+
+      - name: Deploy
+        id: deploy
+        run: |
+          if [ "$VERCEL_TARGET" = "production" ]; then
+            url="$(vercel deploy --prebuilt --prod)"
+          else
+            url="$(vercel deploy --prebuilt)"
+          fi
+          echo "url=${url}" >> "$GITHUB_OUTPUT"
+          echo "Deployed ${VERCEL_TARGET}: ${url}" >> "$GITHUB_STEP_SUMMARY"
